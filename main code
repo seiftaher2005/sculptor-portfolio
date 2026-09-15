@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سيف طاهر | نحّات وفنان تشكيلي معاصر</title>
+  
+  <!-- خط تجوال وخط Cairo للأناقة الفنية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-red: #D90429;
+      --deep-red: #9B0017;
+      --accent-yellow: #FFB703;
+      --light-yellow: #FFF1BF;
+      --pure-white: #FFFFFF;
+      --off-white: #F8F9FA;
+      --dark-stone: #1A1A1A;
+      --text-muted: #555555;
+      --border-color: #EBEBEB;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 40px rgba(217, 4, 41, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--pure-white);
+      color: var(--dark-stone);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 2px solid var(--off-white);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--dark-stone);
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary-red), var(--accent-yellow));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--dark-stone);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-red);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -6px;
+      right: 0;
+      background: var(--accent-yellow);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(180deg, var(--off-white) 0%, var(--pure-white) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: var(--light-yellow);
+      color: #946800;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      border-right: 4px solid var(--accent-yellow);
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      color: var(--dark-stone);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      color: var(--primary-red);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-bio {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      text-align: justify;
+      line-height: 1.9;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary-red);
+      color: var(--pure-white);
+      box-shadow: 0 8px 20px rgba(217, 4, 41, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-red);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(217, 4, 41, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--dark-stone);
+      border: 2px solid var(--accent-yellow);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-yellow);
+      color: #332100;
+      transform: translateY(-3px);
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      height: 480px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid var(--pure-white);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-image-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-decor-badge {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--accent-yellow);
+      color: #332100;
+      padding: 15px 22px;
+      border-radius: 16px;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      padding: 5rem 0;
+      background: var(--pure-white);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--primary-red);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      color: var(--dark-stone);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .philo-card {
+      background: var(--off-white);
+      padding: 2.2rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-red), var(--accent-yellow));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .philo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      background: var(--pure-white);
+    }
+
+    .philo-card:hover::before {
+      opacity: 1;
+    }
+
+    .philo-icon {
+      width: 55px;
+      height: 55px;
+      background: var(--light-yellow);
+      color: var(--primary-red);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .philo-title {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--dark-stone);
+    }
+
+    .philo-text {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 5rem 0;
+      background: #FAFAFA;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      background: var(--pure-white);
+      border: 1.5px solid var(--border-color);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark-stone);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary-red);
+      color: var(--pure-white);
+      border-color: var(--primary-red);
+      box-shadow: 0 4px 12px rgba(217, 4, 41, 0.2);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .artwork-card {
+      background: var(--pure-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artwork-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .artwork-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background-color: #111;
+      overflow: hidden;
+    }
+
+    .artwork-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .artwork-card:hover .artwork-thumb {
+      transform: scale(1.08);
+    }
+
+    .artwork-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 5px 14px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      color: var(--accent-yellow);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .artwork-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(217, 4, 41, 0.85) 0%, rgba(0,0,0,0.2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .artwork-card:hover .artwork-overlay {
+      opacity: 1;
+    }
+
+    .overlay-view-btn {
+      padding: 10px 22px;
+      background: var(--pure-white);
+      color: var(--primary-red);
+      font-weight: 800;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .artwork-info {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .artwork-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+      color: var(--dark-stone);
+    }
+
+    .artwork-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .artwork-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .artwork-excerpt {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Modal / Lightbox */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-container {
+      background: var(--pure-white);
+      width: 100%;
+      max-width: 950px;
+      max-height: 90vh;
+      border-radius: 24px;
+      overflow-y: auto;
+      position: relative;
+      animation: modalFadeIn 0.35s ease;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 42px;
+      height: 42px;
+      background: var(--off-white);
+      border: none;
+      border-radius: 50%;
+      color: var(--dark-stone);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--primary-red);
+      color: var(--pure-white);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-image-pane {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+    }
+
+    .modal-image-pane img {
+      width: 100%;
+      height: 100%;
+      max-height: 550px;
+      object-fit: contain;
+    }
+
+    .modal-content-pane {
+      padding: 2.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 4px 14px;
+      background: var(--light-yellow);
+      color: #946800;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.9rem;
+      color: var(--dark-stone);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .modal-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      background: var(--off-white);
+      padding: 1.2rem;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-item {
+      font-size: 0.9rem;
+    }
+
+    .spec-label {
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .spec-value {
+      font-weight: 700;
+      color: var(--dark-stone);
+    }
+
+    .modal-description {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-stone);
+      color: var(--pure-white);
+      padding: 4rem 0 2rem;
+      border-top: 4px solid var(--primary-red);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--pure-white);
+    }
+
+    .footer-brand p {
+      color: #AAA;
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    .footer-contact h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: var(--accent-yellow);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--pure-white);
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--primary-red);
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-bio {
+        text-align: center;
+      }
+      .hero-cta {
+        justify-content: center;
+      }
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-content-pane {
+        padding: 1.8rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <div class="logo-badge">س</div>
+        <div>سيف طاهر</div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="active">عن الفنان</a></li>
+        <li><a href="#philosophy">الرؤية والخامات</a></li>
+        <li><a href="#gallery">معرض الأعمال</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="about">
+    <div class="container hero-grid">
+      <div class="hero-text-content">
+        <span class="hero-tag">نحّات وفنان تشكيلي معاصر</span>
+        <h1 class="hero-title">تحويل الأفكار والمشاعر إلى <span>أشكال ملموسة</span></h1>
+        <p class="hero-bio">
+          أنا <strong>سيف طاهر</strong>، نحّات وفنان تشكيلي مصري، أعمل على استكشاف العلاقة بين الإنسان والمادة والفكرة من خلال النحت. أهتم بالتعبير عن التجارب الإنسانية والقضايا المعاصرة بأسلوب يجمع بين التجريب والبساطة والقوة البصرية. بالنسبة لي، النحت ليس مجرد تشكيل للخامة، بل هو وسيلة للتفكير والتعبير؛ فكل عمل يمثل تجربة أتعلم منها وأطور من خلالها لغتي الفنية.
+        </p>
+        <div class="hero-cta">
+          <a href="#gallery" class="btn btn-primary"><i class="fa-solid fa-eye"></i> استكشف الأعمال الحالية</a>
+          <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> تواصل معي</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img src="input_file_0.png" alt="النحات سيف طاهر" />
+        </div>
+        <div class="hero-decor-badge">
+          <i class="fa-solid fa-cube fa-lg"></i>
+          <span>استكشاف المادة والفراغ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & Materials -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">الفلسفة والمنهج</span>
+        <h2 class="section-title">العلاقة بين الإنسان والمادة</h2>
+        <p class="section-desc">أعمل باستخدام خامات وتقنيات متنوعة، ساعياً لاكتشاف إمكانيات جديدة لكل خامة وملمسها وطريقة التعامل معها.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philo-card">
+          <div class="philo-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+          <h3 class="philo-title">النحت بالطين والصلصال</h3>
+          <p class="philo-text">تجسيد فوري للمشاعر وبناء الكتلة الأساسية والتعامل مع التفاصيل والملامح الحركية بعفوية ودقة تعبيرية عالية.</p>
+        </div>
+
+        <div class="philo-card">
+          <div class="philo-icon"><i class="fa-solid fa-shapes"></i></div>
+          <h3 class="philo-title">الجبس والخامات المجمعة</h3>
+          <p class="philo-text">تثبيت الأشكال وصناعة التراكيب التعبيرية القابلة للارتداء والأداء، مثل مجسمات رؤوس الأسماك والكائنات الأسطورية.</p>
+        </div>
+
+        <div class="philo-card">
+          <div class="philo-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3 class="philo-title">التجريب والأداء المعاصر</h3>
+          <p class="philo-text">نقل المنحوتة من الاستوديو إلى الفضاء العام والمسرح، لتخلق صدمة وتفاعلاً بصرياً يترك للمشاهد حرية التأويل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">الأعمال الفنية</span>
+        <h2 class="section-title">معرض المنحوتات ومراحل التشكيل</h2>
+        <p class="section-desc">استكشف العمل الفني بمختلف مراحله: من الطين والتشريح حتى الأداء النهائي والإضاءة.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">جميع اللقطات</button>
+        <button class="filter-btn" data-filter="final">المجسم النهائي والتفاصيل</button>
+        <button class="filter-btn" data-filter="performance">الأداء والتفاعل الميداني</button>
+        <button class="filter-btn" data-filter="process">مراحل التشكيل بالطين</button>
+      </div>
+
+      <!-- Artwork Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- يتم تحميل الأعمال بواسطة JavaScript أدناه -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-backdrop" id="artworkModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-grid">
+        <div class="modal-image-pane">
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="modal-content-pane">
+          <span class="modal-badge" id="modalCategory">المجسم النهائي</span>
+          <h2 class="modal-title" id="modalTitle">اسم العمل الفني</h2>
+          
+          <div class="modal-specs">
+            <div class="spec-item">
+              <span class="spec-label">الخامة والتقنية:</span>
+              <span class="spec-value" id="modalMedium">صلصال، جبس، ألوان مركبة، إضاءة</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">سنة الإنتاج:</span>
+              <span class="spec-value" id="modalYear">2026</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">المقاس / الحالة:</span>
+              <span class="spec-value" id="modalScale">حجم طبيعي مجوف (قابل للارتداء)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">الفنان:</span>
+              <span class="spec-value">سيف طاهر</span>
+            </div>
+          </div>
+
+          <p class="modal-description" id="modalDesc">
+            تفاصيل العمل الفني والفكرة المستوحاة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>سيف طاهر</h3>
+          <p>
+            نحّات وفنان تشكيلي معاصر. أطمح إلى تطوير تجربتي في مجال النحت، وتجربة خامات وأساليب جديدة، والمشاركة في المعارض والمشروعات الفنية، وبناء مسار فني يعكس هويتي وأفكاري.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>تواصل ومتابعة</h4>
+          <p style="color: #bbb; margin-bottom: 1.2rem;">للاستفسارات والمعارض والتعاون الفني:</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" title="Behance"><i class="fa-brands fa-behance"></i></a>
+            <a href="#" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:contact@seiftaher.art" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        جميع الحقوق محفوظة &copy; 2026 للفنان سيف طاهر.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Gallery Logic -->
+  <script>
+    // صور الفنان سيف طاهر الأصلية فقط
+    const artworks = [
+      {
+        id: 1,
+        title: "سمكة الشص (Anglerfish) - الواجهة والأسنان",
+        category: "final",
+        categoryName: "المجسم النهائي",
+        img: "input_file_1.png",
+        medium: "نحت مركب، جبس، ألوان، وحدة إضاءة تفاعلية",
+        year: "2026",
+        scale: "حجم رأسي مجوف (قابل للارتداء)",
+        desc: "منحوتة تعبيرية تجسد رأس سمكة الأعماق المضيئة (Anglerfish) مع تركيز بصري على حدة الأسنان وتدرج الألوان بين الأحمر القاتم والأصفر الفاقع، متوجة بمصباح إضاءة حقيقي."
+      },
+      {
+        id: 2,
+        title: "سمكة الشص - المنظور الجانبي الكامل",
+        category: "final",
+        categoryName: "المجسم النهائي",
+        img: "input_file_2.png",
+        medium: "خامات مختلطة، صب وتلوين يدوي",
+        year: "2026",
+        scale: "امتداد جانبي 70 سم",
+        desc: "تكوين جانبي يوضح انسيابية الزعانف، ملمس الجلد العضوي واللمعان، وتوازن مصباح الطُعم الضوئي الممتد إلى مقدمة الفك."
+      },
+      {
+        id: 3,
+        title: "أداء ميداني - بين أحواض الأسماك بالشارع",
+        category: "performance",
+        categoryName: "الأداء والتفاعل",
+        img: "input_file_5.png",
+        medium: "فن تفاعلي وأداء مسرحي بصري",
+        year: "2026",
+        scale: "عمل تفاعلي ميداني",
+        desc: "عرض العمل في سياق واقعي ومفارقة بصرية أمام أحواض أسماك الزينة في الشارع ليلاً، لربط المنحوتة بالبيئة الشعبية والواقع المعاش."
+      },
+      {
+        id: 4,
+        title: "أداء المسرح - الحضور البصري في القاعة",
+        category: "performance",
+        categoryName: "الأداء والتفاعل",
+        img: "input_file_6.png",
+        medium: "نحت قابل للارتداء (Wearable Sculpture)",
+        year: "2026",
+        scale: "أداء حي على خشبة المسرح",
+        desc: "ارتداء القناع المنحوت في قاعة المسرح بين الكراسي الحمراء، ما يخلق حالة سريالية تعبر عن الاغتراب والقضايا الإنسانية المعاصرة."
+      },
+      {
+        id: 5,
+        title: "أداء المسرح - لقطة جانبية استعراضية",
+        category: "performance",
+        categoryName: "الأداء والتفاعل",
+        img: "input_file_7.png",
+        medium: "نحت تجريبي وارتداء",
+        year: "2026",
+        scale: "أداء حي",
+        desc: "توظيف المنحوتة كجزء من جسد الفنان لخلق هوية بصرية متبدلة تستفز تساؤلات المتلقي."
+      },
+      {
+        id: 6,
+        title: "مرحلة التشكيل بالطين - بناء الكتلة والزعانف",
+        category: "process",
+        categoryName: "مراحل الطين والصلصال",
+        img: "input_file_3.png",
+        medium: "طين أسواني / صلصال مباشر على هيكل حديدي",
+        year: "2026",
+        scale: "قيد التنفيذ بالأستوديو",
+        desc: "المرحلة الأولى لتأسيس الحجم والكتلة العضلية والملمس الخشن للزعانف وحركة الفم المفتوح باستخدام الطين في الأتيليه."
+      },
+      {
+        id: 7,
+        title: "مرحلة التأسيس - تجويف الوجه والنسب",
+        category: "process",
+        categoryName: "مراحل الطين والصلصال",
+        img: "input_file_4.png",
+        medium: "طين فوق قالب رأس جبسي",
+        year: "2026",
+        scale: "بناء الهيكل الداخلي",
+        desc: "مرحلة مطابقة وتجويف فم المنحوتة ليتطابق مع ملامح الوجه الإنساني لتمكين ارتدائه لاحقاً بدقة تامة."
+      },
+      {
+        id: 8,
+        title: "دراسة النحت الطيني - زاوية جانبية متقدمة",
+        category: "process",
+        categoryName: "مراحل الطين والصلصال",
+        img: "input_file_8.png",
+        medium: "طين ونحت تفصيلي",
+        year: "2026",
+        scale: "مرحلة ضبط الملامس",
+        desc: "تشطيب ملامس العيون، القرون العلوية، وثنايا الجفون في الطين قبل مرحلة القولبة والصب والتلوين النهائي."
+      }
+    ];
+
+    // عناصر DOM
+    const galleryGrid = document.getElementById('galleryGrid');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const modal = document.getElementById('artworkModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalImg = document.getElementById('modalImg');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMedium = document.getElementById('modalMedium');
+    const modalYear = document.getElementById('modalYear');
+    const modalScale = document.getElementById('modalScale');
+    const modalDesc = document.getElementById('modalDesc');
+
+    // دالة رسم الأعمال
+    function renderGallery(filter = 'all') {
+      galleryGrid.innerHTML = '';
+      const filtered = filter === 'all' ? artworks : artworks.filter(item => item.category === filter);
+
+      filtered.forEach(art => {
+        const card = document.createElement('div');
+        card.className = 'artwork-card';
+        card.innerHTML = `
+          <div class="artwork-thumb-wrap">
+            <img src="${art.img}" alt="${art.title}" class="artwork-thumb" loading="lazy" />
+            <span class="artwork-badge">${art.categoryName}</span>
+            <div class="artwork-overlay">
+              <span class="overlay-view-btn"><i class="fa-solid fa-expand"></i> عرض التفاصيل</span>
+            </div>
+          </div>
+          <div class="artwork-info">
+            <h3 class="artwork-title">${art.title}</h3>
+            <div class="artwork-meta">
+              <span><i class="fa-regular fa-calendar"></i> ${art.year}</span>
+              <span><i class="fa-solid fa-palette"></i> ${art.medium.substring(0, 24)}...</span>
+            </div>
+            <p class="artwork-excerpt">${art.desc.substring(0, 85)}...</p>
+          </div>
+        `;
+        card.addEventListener('click', () => openModal(art));
+        galleryGrid.appendChild(card);
+      });
+    }
+
+    // فتح النافذة المنبثقة
+    function openModal(art) {
+      modalImg.src = art.img;
+      modalCategory.textContent = art.categoryName;
+      modalTitle.textContent = art.title;
+      modalMedium.textContent = art.medium;
+      modalYear.textContent = art.year;
+      modalScale.textContent = art.scale;
+      modalDesc.textContent = art.desc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // إغلاق النافذة المنبثقة
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // تصفية المعرض
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderGallery(btn.getAttribute('data-filter'));
+      });
+    });
+
+    // التشغيل الأولي
+    renderGallery();
+  </script>
+</body>
+</html>
